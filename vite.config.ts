@@ -4,12 +4,8 @@ import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
-  plugins: [
-    tailwindcss(),
-    reactRouter({
-      // Use the Node preset since @react-router/vercel doesn’t exist yet
-      preset: "node",
-    }),
-    tsconfigPaths(),
-  ],
+  plugins: [tailwindcss(), reactRouter(), tsconfigPaths()],
+  server: {
+    open: true, // ✅ Automatically open in default browser
+  },
 });
